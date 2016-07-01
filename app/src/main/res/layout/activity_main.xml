@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.productsearch.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +20,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:textColor="@color/colorTextIcons" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,7 +31,8 @@
         android:id="@+id/textView"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/colorTextIcons" />
 
     <EditText
         android:layout_width="match_parent"
@@ -36,7 +41,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
-        android:text="Enter Product Here..."
+        android:hint="Enter Product Here..."
         android:textColor="#484747"
         android:background="#b9b5b5" />
 
@@ -44,7 +49,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/findProductButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"/>
+
+
 </RelativeLayout>
