@@ -23,4 +23,4 @@
 Legal
 ------
 
-_*Copyright (c) 2016 DjRoychoudhury - Under the MIT license*_
+_*Copyright (c) 2016 DJ Roychoudhury - Under the MIT license*_
