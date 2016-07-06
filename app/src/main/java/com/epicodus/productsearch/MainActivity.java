@@ -10,7 +10,7 @@ import android.widget.EditText;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.findProductButton) Button mFindProductButton;
     @Bind(R.id.productEditText) EditText mProductEditText;
 
@@ -21,15 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-            mFindProductButton.setOnClickListener(new View.OnClickListener() {
+        mFindProductButton.setOnClickListener(this);
+    }
                 @Override
                 public void onClick(View view) {
-                    String product = mProductEditText.getText().toString();
-                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
-                    intent.putExtra("product", product);
-                    startActivity(intent);
+                    if (view == mFindProductButton) {
+                        String product = mProductEditText.getText().toString();
+                        Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                        intent.putExtra("product", product);
+                        startActivity(intent);
+                    }
                 }
-            });
-    }
 }
 
