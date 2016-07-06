@@ -7,16 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    private Button mFindProductButton;
-    private EditText mProductEditText;
+    @Bind(R.id.findProductButton) Button mFindProductButton;
+    @Bind(R.id.productEditText) EditText mProductEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mProductEditText = (EditText) findViewById(R.id.productEditText);
-        mFindProductButton = (Button) findViewById(R.id.findProductButton);
+
+        ButterKnife.bind(this);
+
             mFindProductButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

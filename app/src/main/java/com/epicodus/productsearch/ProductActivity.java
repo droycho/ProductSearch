@@ -7,9 +7,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class ProductActivity extends AppCompatActivity {
-    private TextView mProductTextView;
-    private ListView mListView;
+    @Bind(R.id.productTextView) TextView mProductTextView;
+    @Bind(R.id.listView) ListView mListView;
     private String[] locations = new String[] {"BestBuy", "Office Depot", "Apple Store", "Microsoft Store", "Target", "Walmart", "Fry's Electronics", "PSU Bookstore", "Computek", "Geek Choice", "Happy Hamster Computers"};
 
     @Override
@@ -17,8 +20,7 @@ public class ProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mProductTextView = (TextView) findViewById(R.id.productTextView);
+        ButterKnife.bind(this);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, locations);
         mListView.setAdapter(adapter);
